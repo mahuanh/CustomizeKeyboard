@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingTop="400dp"
+    android:id="@+id/main_ll"
+    tools:context=".MainActivity">
+
+
+    <EditText
+        android:id="@+id/pwd1_ed"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="只有小键盘" />
+
+
+    <EditText
+        android:id="@+id/pwd2_ed"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="小写字母+随机数字" />
+</LinearLayout>
