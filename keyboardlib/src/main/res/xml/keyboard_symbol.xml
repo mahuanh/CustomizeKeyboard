@@ -136,16 +136,13 @@
             android:horizontalGap="1%p" android:keyWidth="8.9%p"
             android:keyLabel="=" />
 
-
-
     </Row>
-
+    <!--第四行-->
     <Row android:rowEdgeFlags="bottom">
 
         <Key
             android:horizontalGap="1%p" android:keyWidth="13.1%p"
             android:codes="456456"
-            android:keyLabel="ABC"
             android:keyIcon="@drawable/icon_abc"/>
         <Key
             android:horizontalGap="1%p" android:keyWidth="13.1%p"

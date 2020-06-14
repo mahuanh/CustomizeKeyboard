@@ -282,25 +282,31 @@ public class MyKeyboardView extends KeyboardView {
     @Override
     public void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-        List<Keyboard.Key> keys = getKeyboard().getKeys();
-        for (Keyboard.Key key : keys) {
-            if (key.codes[0] == -5 || key.codes[0] == -1 || key.codes[0] == 789789 || key.codes[0] == 456456) {//删除按钮样式
-                Drawable dr = getContext().getResources().getDrawable(R.drawable.keyboard_keybg_gray);
-                dr.setBounds(key.x, key.y, key.x + key.width, key.y + key.height);
-                dr.draw(canvas);
-                int drawableX = key.x + (key.width - key.icon.getIntrinsicWidth()) / 2;
-                int drawableY = key.y + (key.height - key.icon.getIntrinsicHeight()) / 2;
-                key.icon.setBounds(drawableX, drawableY, drawableX + key.icon.getIntrinsicWidth(), drawableY + key.icon.getIntrinsicHeight());
-                key.icon.draw(canvas);
-            } else if (key.codes[0] == 123321) {//占位按钮样式
-                Drawable dr = getContext().getResources().getDrawable(R.drawable.keyboard_keybg_empty);
-                dr.setBounds(key.x, key.y, key.x + key.width, key.y + key.height);
-                dr.draw(canvas);
-                int drawableX = key.x + (key.width - key.icon.getIntrinsicWidth()) / 2;
-                int drawableY = key.y + (key.height - key.icon.getIntrinsicHeight()) / 2;
-                key.icon.setBounds(drawableX, drawableY, drawableX + key.icon.getIntrinsicWidth(), drawableY + key.icon.getIntrinsicHeight());
-                key.icon.draw(canvas);
-            }
-        }
+//        List<Keyboard.Key> keys = getKeyboard().getKeys();
+//        for (Keyboard.Key key : keys) {
+//            if (key.codes[0] == -5 || key.codes[0] == -1 || key.codes[0] == 789789 || key.codes[0] == 456456) {//删除按钮样式
+//                Drawable dr = getContext().getResources().getDrawable(R.drawable.keyboard_keybg_gray);
+//                dr.setBounds(key.x, key.y, key.x + key.width, key.y + key.height);
+//                dr.draw(canvas);
+//                int drawableX = key.x + (key.width - key.icon.getIntrinsicWidth()) / 2;
+//                int drawableY = key.y + (key.height - key.icon.getIntrinsicHeight()) / 2;
+//                key.icon.setBounds(drawableX, drawableY, drawableX + key.icon.getIntrinsicWidth(), drawableY + key.icon.getIntrinsicHeight());
+//                key.icon.draw(canvas);
+//            } else if (key.codes[0] == 123321 ) {//占位按钮样式
+//                Drawable dr = getContext().getResources().getDrawable(R.drawable.keyboard_keybg_empty);
+//                dr.setBounds(key.x, key.y, key.x + key.width, key.y + key.height);
+//                dr.draw(canvas);
+//                int drawableX = key.x + (key.width - key.icon.getIntrinsicWidth()) / 2;
+//                int drawableY = key.y + (key.height - key.icon.getIntrinsicHeight()) / 2;
+//                key.icon.setBounds(drawableX, drawableY, drawableX + key.icon.getIntrinsicWidth(), drawableY + key.icon.getIntrinsicHeight());
+//                key.icon.draw(canvas);
+//            }
+//
+////            else if(){//123样式
+////                Drawable dr = getContext().getResources().getDrawable(R.drawable.keyboard_keybg_empty);
+////                dr.setBounds(key.x, key.y, key.x + key.width, key.y + key.height);
+////                dr.draw(canvas);
+////            }
+//        }
     }
 }

@@ -11,6 +11,7 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import java.lang.reflect.Method;
 
@@ -35,12 +36,14 @@ public class KeyboardUtil {
     private int mKeyboardHeight;//键盘高度 260dp
     private int mHeightPixels;//屏幕高度
     private int mKeyBoardMarginEditTextTopHeight;//键盘距离编辑框顶部最少距离 （用来计算键盘上推高度）
-
+    /**键盘标题*/
+    private TextView tv_keboardview_title;
     public KeyboardUtil(Activity context, View parent) {
         this.mActivity = context;
         this.mParent = parent;
         LinearLayout mIncludeKeyboardview = (LinearLayout) LayoutInflater.from(context).inflate(R.layout.include_keyboardview, null);
         RelativeLayout mKeyboardTopView = (RelativeLayout) mIncludeKeyboardview.findViewById(R.id.keyboard_top_rl);
+        tv_keboardview_title = mKeyboardTopView.findViewById(R.id.tv_keboardview_title);
         mKeyboardView = (MyKeyboardView) mIncludeKeyboardview.findViewById(R.id.keyboard_view);
         mWindow = new PopupWindow(mIncludeKeyboardview, ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT, false);
         mWindow.setAnimationStyle(R.style.AnimBottom);   //滑出滑入动画
@@ -61,7 +64,10 @@ public class KeyboardUtil {
 //    public void initKeyboard(EditText... editTexts) {
 //        initKeyboard(MyKeyboardView.KEYBOARDTYPE_Num_Pwd, editTexts);
 //    }
-
+    //设置标题
+    public void setTitle(String title){
+        tv_keboardview_title.setText(title);
+    }
     /**
      * 键盘初始化，设置编辑框监听器
      *
@@ -70,6 +76,7 @@ public class KeyboardUtil {
      */
     @SuppressWarnings("all")
     public void initKeyboard(final int keyBoardType,final boolean isPwd, EditText... editTexts) {
+
         for (final EditText editText : editTexts) {
             hideSystemSofeKeyboard(editText);
             editText.setOnTouchListener(new View.OnTouchListener() {

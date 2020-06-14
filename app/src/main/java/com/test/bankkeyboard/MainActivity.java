@@ -30,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
         mPwd2_ed = findViewById(R.id.pwd2_ed);
 
         KeyboardUtil keyboardUtil = new KeyboardUtil(this, mMain_ll);
+        keyboardUtil.setTitle("自定义安全键盘");
         keyboardUtil.initKeyboard(MyKeyboardView.KEYBOARDTYPE_Only_Num_Pwd, false, mPwd1_ed);//随机纯数字键盘
         keyboardUtil.initKeyboard(MyKeyboardView.KEYBOARDTYPE_ABC, false, mPwd2_ed);//随机键盘
     }
